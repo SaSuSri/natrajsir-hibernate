@@ -1,0 +1,20 @@
+ <!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.nt.domain.EmpDetails">
+		<id name="eno" />
+		<property name="ename"/>
+		<property name="salary"/>
+		<many-to-one name="dept"  class="com.nt.domain.Department"
+		                         column="deptno" cascade="all" lazy="no-proxy"/> 
+	</class>
+</hibernate-mapping>
+
+<!-- create table Department(deptno number(5) primary key, deptname varchar2(20),
+                                                 deptHead varchar2(20)); 
+	
+	create table EmpDetails(eno number(8) primary key, ename  varchar2(20),
+	  salary number(5),	deptno number(5) references Department(deptno));
+ -->

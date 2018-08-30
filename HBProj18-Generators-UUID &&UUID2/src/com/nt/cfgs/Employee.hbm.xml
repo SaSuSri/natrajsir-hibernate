@@ -1,0 +1,24 @@
+ <!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping> 
+	<class name="com.nt.domain.EmpDetails" table="Employee1">
+<!-- 	  <id name="no"  column="EID">
+          <generator class="uuid">
+             <param name="separator">-</param>
+          </generator>
+        </id>
+ -->
+     <id name="no"  column="EID">
+        <generator class="uuid2">
+          <param name="uuid_gen_strategy_class">org.hibernate.id.uuid.StandardRandomStrategy</param>
+        </generator>
+     </id>
+ 		<property name="fname" >
+		   <column name="FIRSTNAME"/>
+		</property>
+		<property name="lname"  column="LASTNAME"/>
+		<property name="mail"  column="EMAIL"/>
+	</class>
+</hibernate-mapping>

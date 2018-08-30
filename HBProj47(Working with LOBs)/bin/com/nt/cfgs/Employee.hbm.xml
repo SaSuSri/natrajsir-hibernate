@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.nt.domain.EmpProfile" table="EmployeeProfile">
+		<id name="eid" column="emp_id" type="int"/>
+		<property name="ename" column="emp_name" type="string"/>
+		<property name="eresume" column="emp_resume" type="clob"/>
+		<property name="ephoto" column="emp_photo" type="blob"/>
+	</class>
+</hibernate-mapping>
+
+
+<!--
+create table EmployeeProfile
+(
+emp_id number(5) primary key,
+emp_name varchar2(20),
+emp_resume clob,
+emp_photo blob 
+);
+-->

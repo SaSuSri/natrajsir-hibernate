@@ -1,0 +1,40 @@
+ <!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping> 
+	<class name="com.nt.domain.EmpDetails" table="Employee">
+	   <id name="no" column="EID">
+	     <generator class="increment"/>
+	   </id>
+	  <!--  <id name="no" column="EID"> 
+	      <generator class="hilo">
+	        <param name="table">high_tab</param>
+	        <param name="column">high</param>
+	        <param name="max_lo">5</param>
+	     </generator>
+	     </id> -->
+	<!--      <id name="no" column="EID">
+	       <generator class="seqhilo">
+	         <param name="sequence">EID_sequence1</param>
+	         <param name="max_lo">5</param>
+	       </generator>
+	     </id> -->
+	    <!--   <id name="no" column="EID">
+	        <generator class="native"/>
+	      </id> -->
+	       <!-- <id name="no" column="EID">
+	        <generator class="native">
+	          <param name="sequence_name">EID_sequence</param>
+	        </generator>
+	      </id> -->
+	     <!--  <id name="no" column="EID">
+	        <generator class="native"/>
+	      </id> -->
+		<property name="fname" >
+		   <column name="FIRSTNAME"/>
+		</property>
+		<property name="lname"  column="LASTNAME"/>
+		<property name="mail"  column="EMAIL"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+ <!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.nt.domain.Person" table="in_persons" discriminator-value="per">
+		<id name="id" /> <!-- Singular Identifier Cfg -->
+		<discriminator column="person_type" type="string" />
+		<property name="name" />
+		<property name="company" />
+		<subclass name="com.nt.domain.Employee" discriminator-value="emp">
+			<property name="department" />
+			<property name="salary" />
+		</subclass>
+		<subclass name="com.nt.domain.Customer" discriminator-value="cust">
+			<property name="address" />
+		</subclass>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<!-- <!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"> -->
+
+<hibernate-configuration>
+	<session-factory>
+	   
+ <!-- Proxool con pool properties -->
+		<property name="connection.provider_class">
+          org.hibernate.proxool.internal.ProxoolConnectionProvider
+     </property>
+      <property name="hibernate.proxool.pool_alias">pool1</property>
+      <property name="hibernate.proxool.xml">com/nt/cfgs/proxool_cfgs.xml</property>
+      
+		<!-- Hibernate properties -->
+		<property name="hibernate.show_sql">true</property>
+	<!-- 	<property name="hibernate.format_sql">true</property> -->
+		<property name="hibernate.dialect"></property>
+        <!-- mapping file cfg -->
+		<mapping resource="com/nt/cfgs/Employee.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

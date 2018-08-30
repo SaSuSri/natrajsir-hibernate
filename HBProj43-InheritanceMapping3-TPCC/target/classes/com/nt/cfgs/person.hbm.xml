@@ -1,0 +1,36 @@
+ <!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.nt.domain.Person" table="in_persons3">
+		<id name="id" /> <!-- Singular Identifier Cfg -->
+		<property name="name" />
+		<property name="company" />
+		<union-subclass name="com.nt.domain.Employee" table="in_employees3">
+        	<property name="department" />
+			<property name="salary" />
+		</union-subclass>
+		<union-subclass name="com.nt.domain.Customer" table="in_customers3">
+			<property name="address" />
+		</union-subclass>
+	</class>
+</hibernate-mapping>
+
+<!-- 
+  create table in_persons3(id number(5) primary key,
+                                            name varchar2(20),
+                                            company varchar2(20));
+                                            
+  create table in_employees3(id number(5) primary key,
+                                            name varchar2(20),
+                                            company varchar2(20),
+                                            department number(7),
+                                                    salary number(8));
+                                                                                                
+  create table in_customers3(id number(5) primary key,
+                                            name varchar2(20),
+                                            company varchar2(20),
+                                            address varchar2(20));
+                                                    
+ -->

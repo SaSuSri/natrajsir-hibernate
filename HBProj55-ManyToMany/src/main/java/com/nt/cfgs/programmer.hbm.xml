@@ -1,0 +1,15 @@
+ <!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.nt.domain.Programmer" table="programmers">
+		<id name="pid"/>
+		<property name="pname"/>
+		<property name="salary"/>
+		<set name="projects"  table="programmers_projects" cascade="all"  lazy="extra" inverse="true"  fetch="join">
+		   <key column="programmer_id"/>
+		   <many-to-many class="com.nt.domain.Project" column="project_id"/>
+		</set>
+	</class>
+</hibernate-mapping>

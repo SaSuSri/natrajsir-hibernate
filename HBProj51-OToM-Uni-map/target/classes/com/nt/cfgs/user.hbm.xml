@@ -1,0 +1,22 @@
+ <!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.nt.domain.User" table="user_table3">
+		<id name="userId" column="user_id" /> <!-- Singular Identifier Cfg -->
+		<property name="firstName" column="first_name" />
+		<map name="phones" cascade="all-delete-orphan" lazy="extra">
+			<key column="unid" />
+			<map-key column="map_indx" type="java.lang.String"/>
+			<one-to-many class="com.nt.domain.PhoneNumber" />
+		</map>
+	</class>
+</hibernate-mapping>
+
+<!-- create table user_table3(user_id number(5) primary key, first_name varchar2(20)); 
+	
+	create table Phone_numbers3(phone number(10) primary key, number_type varchar2(20), 
+	unid number(5) references user_table3(user_id),
+	 map_indx varchar2(20));
+ -->

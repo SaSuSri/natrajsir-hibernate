@@ -1,0 +1,13 @@
+ <!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping> 
+	<class name="com.nt.domain.DrawNumber" table="DrawNumber_tab">
+	   <id name="d_number">
+	      <generator class="com.nt.generator.RandomNumberGenerator"/>
+	   </id>
+	   <timestamp name="dot"/>
+		<property name="drawee_name"/>
+	</class>
+</hibernate-mapping>

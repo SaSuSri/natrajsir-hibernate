@@ -1,0 +1,14 @@
+
+<ehcache>
+    <diskStore path="./tmp"/>
+    
+    <defaultCache
+        maxElementsInMemory="100"
+        eternal="false"
+        timeToIdleSeconds="20"
+        timeToLiveSeconds="30"
+        overflowToDisk="true"
+        />
+
+    
+</ehcache>

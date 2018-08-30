@@ -1,0 +1,20 @@
+ <!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.nt.domain.Person" table="Person">
+		<id name="pid">
+		  <generator class="increment"/>
+		</id>
+		<property name="firstName"/>
+		<property name="lastName"/>
+		<property name="age"/>
+	</class>
+</hibernate-mapping>
+
+<!-- create table Person(pid number(7) primary key,firstName varchar2(20),
+   lastName varchar2(20),age number(3));
+       
+       create table license(lid number(7) primary key,type varchar2(15),validFrom date,validTo date,license_holder number(5) references person(pid));
+        -->
